@@ -4,8 +4,8 @@ if variable “first” is bigger than variable “second”:
 */
 
 const first = 5
-const second = 4
+const second = 6
 
 if(first > second) {
     console.log('First is bigger');
-}
+} else console.log('Second is bigger');
