@@ -7,32 +7,52 @@ Usage examples:
 */
 
 function suggestMeal(time, diet) {
-    const mealSuggestions = {
-      morning: {
-        vegan: "Fruit smoothie with oats",
-        vegetarian: "Vegetarian scrambled eggs with toast",
-        omnivore: "Bacon and eggs with toast",
-      },
-      afternoon: {
-        vegan: "Vegan burrito",
-        vegetarian: "Vegetarian pizza",
-        omnivore: "Chicken sandwich",
-      },
-      evening: {
-        vegan: "Grilled vegetables with tofu",
-        vegetarian: "Burnt aubergine veggie chilli",
-        omnivore: "Korean BBQ Pork Sandwich",
-      },
-    };
-  
-    // Check if the specified combination exists in the mealSuggestions object
-    if (time in mealSuggestions && diet in mealSuggestions[time]) {
-      return mealSuggestions[time][diet];
-    }
-  
-    // If the combination is not found, return a generic suggestion
-    return "Sorry, we couldn't find a suggestion.";
+  let suggestion = "Sorry, we couldn't find a suggestion.";
+
+  switch (time) {
+    case "morning":
+      switch (diet) {
+        case "vegan":
+          suggestion = "Fruit smoothie with oats";
+          break;
+        case "vegetarian":
+          suggestion = "Vegetarian scrambled eggs with toast";
+          break;
+        case "omnivore":
+          suggestion = "Bacon and eggs with toast";
+          break;
+      }
+      break;
+    case "afternoon":
+      switch (diet) {
+        case "vegan":
+          suggestion = "Vegan burrito";
+          break;
+        case "vegetarian":
+          suggestion = "Vegetarian pizza";
+          break;
+        case "omnivore":
+          suggestion = "Chicken sandwich";
+          break;
+      }
+      break;
+    case "evening":
+      switch (diet) {
+        case "vegan":
+          suggestion = "Grilled vegetables with tofu";
+          break;
+        case "vegetarian":
+          suggestion = "Burnt aubergine veggie chilli";
+          break;
+        case "omnivore":
+          suggestion = "Korean BBQ Pork Sandwich";
+          break;
+      }
+      break;
   }
+
+  return suggestion;
+}
   
   // Test cases
   console.log(suggestMeal("morning", "vegan")); // "Fruit smoothie with oats"
