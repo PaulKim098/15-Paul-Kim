@@ -5,7 +5,6 @@ Usage examples:
 */
 
 function palindrome(word){
-
     let reverse = "";
 
     for (let i = word.length - 1; i >= 0; i--) {
@@ -13,6 +12,16 @@ function palindrome(word){
         } 
         return reverse === word;
     }
+
+    // let reverse = "";
+
+    // if(word.length < 1) return "This word does not have more than 1 or more characters"
+    // else {
+    //     for (let i = word.length - 1; i >= 0; i--) {
+    //         reverse = word.charAt(i);
+    //     }
+    // } return reverse === word ? true : false;
+
 
 console.log(palindrome('racecar')); // true
 console.log(palindrome('hello')); // false
